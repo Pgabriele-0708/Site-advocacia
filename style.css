@@ -63,7 +63,7 @@ body {
 .main-nav a {
     text-decoration: none;
     color: #ffffff;
-    font-size: 1.0rem; /* Letras ligeiramente maiores para melhor leitura */
+    font-size: 1.1rem; /* Letras ligeiramente maiores para melhor leitura */
     font-weight: 500;
     letter-spacing: 0.5px;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.377);
@@ -1244,4 +1244,81 @@ body {
 .btn-wpp-plantao:hover svg {
     transform: rotate(-10deg) scale(1.1);
 }
+/* Por defeito, o botão do hambúrguer fica escondido no computador */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    padding: 0;
+    z-index: 1001;
+}
 
+/* As 3 riscas do menu hambúrguer */
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* ================================================= */
+/* ESTILO MOBILE (Para telas até 768px - Telemóvel)  */
+/* ================================================= */
+@media (max-width: 768px) {
+    /* Mostra o botão do hambúrguer no telemóvel */
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Esconde o menu de navegação lateralmente por defeito */
+    .main-nav {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Fica escondido fora da tela à direita */
+        width: 75%;
+        height: 100vh;
+        background-color: #0d1b2a; /* Cor de fundo do menu mobile */
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: right 0.4s ease-in-out;
+        z-index: 1000;
+    }
+
+    /* Quando a classe .active for adicionada via JS, o menu aparece deslizando */
+    .main-nav.active {
+        right: 0;
+    }
+
+    /* Organiza os links do menu na vertical no telemóvel */
+    .main-nav ul {
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+    }
+
+    .main-nav a {
+        font-size: 1.2rem;
+    }
+
+    /* Animação do botão hambúrguer transformando-se num "X" quando aberto */
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(9.5px) rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-9.5px) rotate(-45deg);
+    }
+}

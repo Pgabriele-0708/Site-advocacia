@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
 // Lógica para Expandir/Recolher Artigos
 function toggleArtigo(btn) {
     const artigo = btn.parentElement;
@@ -114,3 +115,23 @@ function enviarMensagemContato(event) {
         }, 6000);
     }
 }
+// Funcionalidade do Menu Hambúrguer Responsivo
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav = document.getElementById('mainNav');
+
+    if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mainNav.classList.toggle('active');
+        });
+
+        // Fecha o menu automaticamente ao clicar em qualquer link (opcional, melhora a experiência)
+        mainNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                mainNav.classList.remove('active');
+            });
+        });
+    }
+});
