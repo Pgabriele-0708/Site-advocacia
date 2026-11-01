@@ -36,19 +36,18 @@ body {
     align-items: center;
 }
 
-.logo img {
-    height: 200px;
-    width: auto;
-    object-fit: contain;
-    
-    transition: transform 0.3s ease, filter 0.3s ease; /* Suaviza a animação */
-}
 .logo {
     display: flex;
     align-items: center;
-    margin-left: -150px; /* Aumente este valor (ex: 30px, 40px) se quiser mover ainda mais para a direita */
+    margin-left: 0; /* Remove margens negativas que empurram o logo para fora */
 }
 
+.logo img {
+    height: 65px; /* Define uma altura fixa e controlada para caber perfeitamente na barra */
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
 /* Efeito ao passar o mouse (Hover) */
 .logo img:hover {
     transform: scale(1.10); /* Aumenta levemente de tamanho */
