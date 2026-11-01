@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato & Atendimento | Dr. Vinícius Cordeiro - Advocacia Criminal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Cabeçalho Fixo e Transparente -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="/img/Vinícius sf.png" alt="Dr. Vinícius Cordeiro">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">INÍCIO</a></li>
+                    <li><a href="sobre.html">SOBRE</a></li>
+                    <li><a href="duvidas.html">DÚVIDAS</a></li>
+                    <li><a href="artigos.html">ARTIGOS</a></li>
+                    <li><a href="contato.html" class="active">CONTATO</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-contato">
+    <div class="hero-artigos-content">
+        <span class="subtitulo-topo">ATENDIMENTO IMEDIATO E SIGILOSO</span>
+        <h1>Canais de Contato</h1>
+        <p>Atuação estratégica em prisões em flagrante, audiências de custódia e acompanhamento de inquéritos policiais.</p>
+    </div>
+</section>
+
+    <!-- Seção Principal de Contato -->
+    <main class="contato-container">
+        
+
+
+            <!-- Coluna da Direita: Formulário de Contato Seguro -->
+            <div class="contato-form-wrapper">
+                <h2>Envie sua Mensagem</h2>
+                <form id="form-contato" onsubmit="enviarMensagemContato(event)">
+                    
+                    <div class="form-group">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" required placeholder="Seu nome ou do investigado">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefone">Telefone / WhatsApp</label>
+                        <input type="tel" id="telefone" required placeholder="(21) 99999-9999">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="assunto">Assunto da Demanda</label>
+                        <select id="assunto" required>
+                            <option value="" disabled selected>Selecione a área de interesse</option>
+                            <option value="Flagrante / Plantão">Prisão em Flagrante / Plantão 24h</option>
+                            <option value="Audiência de Custódia">Audiência de Custódia</option>
+                            <option value="Inquérito Policial">Acompanhamento em Inquérito</option>
+                            <option value="Defesa em Ação Penal">Defesa em Ação Penal</option>
+                            <option value="Armas de Fogo">Consultoria sobre Armas de Fogo</option>
+                            <option value="Outros">Outros Assuntos</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensagem">Breve Relato do Caso</label>
+                        <textarea id="mensagem" rows="5" required placeholder="Descreva brevemente a situação (sigilo garantido por sigilo profissional)..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-enviar-mensagem">Enviar Mensagem com Sigilo</button>
+                    
+                    <div id="mensagem-retorno" style="margin-top: 15px;"></div>
+                </form>
+            </div>
+
+        </div>
+        
+
+    </main>
+    
+
+    <!-- Rodapé Institucional -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col sobre">
+                <img src="/img/Vinícius sf.png" alt="Dr. Vinícius Cordeiro" class="footer-logo">
+                <p>Advocacia Criminal de Alta Complexidade. Atuação estratégica, preventiva e litigiosa com foco na garantia dos direitos fundamentais.</p>
+            </div>
+
+            <div class="footer-col links">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="duvidas.html">Dúvidas Frequentes</a></li>
+                    <li><a href="artigos.html">Artigos & Publicações</a></li>
+                    <li><a href="sobre.html">Sobre o Advogado</a></li>
+                    
+                </ul>
+            </div>
+
+            <div class="footer-col redes-contato">
+                <h4>Conecte-se</h4>
+                <div class="social-links">
+                    <a href="https://wa.me/5521984936867" target="_blank" class="social-btn whatsapp">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2013 Dr. Vinícius Cordeiro - Advocacia Criminal. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
