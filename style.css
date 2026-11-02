@@ -12,76 +12,95 @@ body {
     line-height: 1.6;
 }
 
-/* Cabeçalho Fixo Mais Amplo e Imponente */
+/* CABEÇALHO FIXO */
 .site-header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(13, 27, 42, 0.267); /* Fundo translúcido elegante */
+    height: 110px;
+    box-sizing: border-box;
+
+    background-color: rgba(13, 27, 42, 0.267);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
+
     z-index: 1000;
     border-bottom: 1px solid rgba(255, 255, 255, 0.678);
     transition: background-color 0.3s ease;
 }
 
+/* CONTAINER DO CABEÇALHO */
 .header-container {
-    max-width: 1320px;
-    margin: 0 auto;
-    padding: 0 50px;
-    height: 110px; /* Aumentado de 90px para 110px para dar mais presença à barra */
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    width: 90%;
+    max-width: 1400px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    box-sizing: border-box;
+    position: relative;
 }
 
 .logo {
     display: flex;
     align-items: center;
-    margin-left: 0; /* Remove margens negativas que empurram o logo para fora */
+    margin-left: 0;
+    overflow: visible;
+    flex-shrink: 0;
 }
 
 .logo img {
-    height: 65px; /* Define uma altura fixa e controlada para caber perfeitamente na barra */
+    height: 80px;
     width: auto;
+    max-height: 100px;
     object-fit: contain;
+
+    transform: scale(1.5);
+    transform-origin: center;
+
     transition: transform 0.3s ease, filter 0.3s ease;
 }
-/* Efeito ao passar o mouse (Hover) */
+
 .logo img:hover {
-    transform: scale(1.10); /* Aumenta levemente de tamanho */
-    filter: drop-shadow(0 0 12px rgba(145, 95, 3, 0.89)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.925)); /* Cria um brilho elegante em tom dourado */
+    transform: scale(1.6);
+    filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.8));
 }
 /* Menu de Navegação Ampliado */
 .main-nav ul {
     list-style: none;
     display: flex;
-    gap: 45px; /* Maior espaçamento entre os links */
+    gap: 30px; /* Espaçamento equilibrado entre os itens */
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 .main-nav a {
     text-decoration: none;
     color: #ffffff;
-    font-size: 1.1rem; /* Letras ligeiramente maiores para melhor leitura */
+    font-size: 0.75rem !important; /* Letras ligeiramente menores e mais delicadas */
     font-weight: 500;
-    letter-spacing: 0.5px;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.377);
+    letter-spacing: 0.8px;
     transition: color 0.2s ease;
 }
 
 .main-nav a:hover,
 .main-nav a.active {
-    color: #a89807b4;
-    border-bottom: 2px solid #f8f8f86b; /* Linha ativa um pouco mais evidente */
-    padding-bottom: 4px;
+    color: #e0a96d;
+    border-bottom: 2px solid #e0a96d;
+    padding-bottom: 3px;
 }
 /* Hero com Imagem Normal (Sem Filtro Azul Pesado) e Altura Completa */
 .hero-institucional {
-    position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), 
-                url('/img/imagem-hero.png') center/cover no-repeat;
-    padding: 140px 40px 90px 40px;
+   position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), 
+                url('/img/hero-balanca-azul.jpeg') center/cover no-repeat;
+    padding: 160px 40px 90px 40px; /* Afasta o texto do topo para baixo do cabeçalho */
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -90,10 +109,15 @@ body {
 /* Animação de entrada suave da imagem */
     animation: heroFadeIn 1.2s ease-out forwards;
 }
-
+/* Garante o alinhamento justificado profissional em todos os parágrafos da capa */
+.hero-content-left p, 
+.hero-content-left h1 {
+    text-align: justify !important;
+    text-justify: inter-word !important;
+}
 
 .hero-inner {
-    max-width: 1280px;
+    max-width: 1600px;
     margin: 0 auto;
     width: 100%;
     display: grid;
@@ -120,9 +144,9 @@ body {
 
 .subtitulo-topo {
     display: block;
-    font-size: 1.50rem;
+    font-size: 1.20rem;
     letter-spacing: 5px;
-    color: #5f5604;
+    color: #da9836;
     margin-bottom: 15px;
     font-weight: 700;
     text-transform: uppercase;
@@ -132,24 +156,19 @@ body {
 }
 
 .hero-content-left h1 {
-    font-size: 2.00rem;
+    font-size: 1.25rem;
     font-weight: 400;
     color: #ffffff;
     line-height: 1.3;
     margin-bottom: 25px;
     letter-spacing: -0.5px;
-    text-align: justify; /* Textos justificados */
+     text-align: left;
     text-justify: inter-word;
 }
 
 .hero-content-left p {
-    font-size: 1.15rem;
-    color: #e2e8f0;
-    margin-bottom: 35px;
-    max-width: 600px;
-    text-align: justify; /* Textos justificados */
+    text-align: justify;
     text-justify: inter-word;
-    line-height: 1.6;
 }
 
 .hero-acoes {
@@ -181,7 +200,7 @@ body {
     padding: 14px 28px;
     text-decoration: none;
     font-size: 0.95rem;
-    font-weight: 500;
+    font-weight: 300;
     letter-spacing: 0.5px;
     transition: all 0.2s ease;
     border-radius: 4px;
@@ -191,6 +210,7 @@ body {
     background-color: #ffffff;
     color: #0d1b2a;
 }
+
 
 /* Acordeão Container */
 .accordion-container {
@@ -858,7 +878,7 @@ body {
 }
 
 .footer-container {
-    max-width: 1100px;
+    max-width: 1350px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1.5fr 1fr 1.2fr;
@@ -867,7 +887,7 @@ body {
 
 .footer-col h4 {
     color: #ffffff;
-    font-size: 1.1rem;
+    font-size: 1.00rem;
     font-weight: 500;
     margin-bottom: 20px;
     letter-spacing: 0.5px;
@@ -881,7 +901,7 @@ body {
 }
 
 .footer-col.sobre p {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     line-height: 1.6;
     color: #94a3b8;
 }
@@ -899,7 +919,7 @@ body {
 .footer-col.links a {
     color: #cbd5e1;
     text-decoration: none;
-    font-size: 0.95rem;
+    font-size: 0.70rem;
     transition: color 0.2s ease, padding-left 0.2s ease;
 }
 
@@ -909,7 +929,7 @@ body {
 }
 
 .footer-col.redes-contato p {
-    font-size: 0.9rem;
+    font-size: 0.70rem;
     margin-bottom: 20px;
     color: #94a3b8;
 }
@@ -1212,113 +1232,243 @@ body {
     line-height: 1.4;
 }
 
-/* Botão WhatsApp Premium */
-.btn-wpp-plantao {
+
+
+
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: #e0a96d;
+}
+/* =========================================
+   INDEX - AJUSTE RESPONSIVO DA PRIMEIRA TELA
+   ========================================= */
+
+@media screen and (max-width: 768px) {
+
+    .hero-institucional {
+        width: 100%;
+        min-height: 100vh;
+        padding: 130px 25px 60px;
+        box-sizing: border-box;
+    }
+
+    /* Elimina as duas colunas no celular */
+    .hero-institucional .hero-inner {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        width: 100%;
+        max-width: 100%;
+        gap: 0;
+        margin: 0 auto;
+    }
+
+    /* Ocupa toda a largura disponível */
+    .hero-institucional .hero-content-left {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    /* Título */
+    .hero-institucional .hero-content-left h1 {
+        font-size: 1.25rem;
+        text-align: left;
+        line-height: 1.3;
+    }
+
+    /* Parágrafo justificado */
+    .hero-institucional .hero-content-left p {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        font-size: 1rem;
+        line-height: 1.6;
+        text-align: justify !important;
+        text-justify: inter-word;
+        word-break: normal;
+        overflow-wrap: normal;
+        hyphens: none;
+    }
+
+    /* Coluna lateral vazia */
+    .hero-institucional .hero-content-right {
+        display: none;
+    }
+
+    /* Botão */
+    .hero-institucional .hero-acoes {
+        flex-wrap: wrap;
+    }
+}
+/* BOTÃO DE ESPECIALIDADES */
+.btn-especialidades {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background: linear-gradient(135deg, #15803d 0%, #16a34a 100%);
+    gap: 12px;
+    margin-top: 18px;
+    padding: 13px 22px;
+
+    background: transparent;
     color: #ffffff;
-    font-weight: 600;
-    font-size: 0.9rem;
-    padding: 10px 20px;
+    border: 1px solid #b89450;
     border-radius: 4px;
-    text-decoration: none;
-    letter-spacing: 0.5px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
+
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
     transition: all 0.3s ease;
 }
 
-.btn-wpp-plantao:hover {
-    background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%);
-    box-shadow: 0 6px 18px rgba(34, 197, 94, 0.45);
-    transform: scale(1.02);
+.btn-especialidades:hover {
+    background: #4e371e;
+    border-color: #b89450;
 }
 
-.btn-wpp-plantao svg {
-    transition: transform 0.3s ease;
+.seta-especialidades {
+    color: #d2ad65;
+    font-size: 1.2rem;
 }
 
-.btn-wpp-plantao:hover svg {
-    transform: rotate(-10deg) scale(1.1);
+/* TEXTO EXPANSÍVEL */
+.especialidades-conteudo {
+    margin-top: 20px;
+    padding: 20px;
+    border-left: 3px solid #b89450;
+    background: rgba(13, 27, 42, 0.65);
+    border-radius: 4px;
+    animation: aparecerEspecialidades 0.4s ease;
 }
-/* Por defeito, o botão do hambúrguer fica escondido no computador */
+
+.especialidades-conteudo[hidden] {
+    display: none;
+}
+
+.especialidades-conteudo p {
+    color: #ffffff;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    text-align: justify;
+    margin-bottom: 18px;
+}
+
+.especialidades-conteudo p:last-child {
+    margin-bottom: 0;
+}
+
+@keyframes aparecerEspecialidades {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* ALINHAMENTO DOS BOTÕES NA PRIMEIRA TELA */
+.hero-institucional .hero-content-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.hero-institucional .hero-acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.hero-institucional .btn-especialidades {
+    display: flex;
+    width: 280px;
+    min-height: 52px;
+    margin: 15px 0 0 0;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+    box-sizing: border-box;
+}
+/* BOTÃO HAMBÚRGUER */
 .menu-toggle {
     display: none;
-    background: none;
+    width: 30px;
+    height: 24px;
+    padding: 0;
     border: none;
+    background: transparent;
     cursor: pointer;
     flex-direction: column;
     justify-content: space-between;
-    width: 30px;
-    height: 22px;
-    padding: 0;
-    z-index: 1001;
+    z-index: 10002;
 }
 
-/* As 3 riscas do menu hambúrguer */
 .menu-toggle span {
-    display: block;
     width: 100%;
     height: 3px;
-    background-color: #ffffff;
-    border-radius: 2px;
+    background: #e0a96d;
+    border-radius: 3px;
     transition: all 0.3s ease;
 }
 
-/* ================================================= */
-/* ESTILO MOBILE (Para telas até 768px - Telemóvel)  */
-/* ================================================= */
-@media (max-width: 768px) {
-    /* Mostra o botão do hambúrguer no telemóvel */
+/* TRANSFORMAÇÃO EM X */
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg);
+}
+
+/* VERSÃO MOBILE */
+@media screen and (max-width: 768px) {
+
+    .header-container {
+        position: relative;
+    }
+
     .menu-toggle {
         display: flex;
     }
 
-    /* Esconde o menu de navegação lateralmente por defeito */
     .main-nav {
-        position: fixed;
-        top: 0;
-        right: -100%; /* Fica escondido fora da tela à direita */
-        width: 75%;
-        height: 100vh;
-        background-color: #0d1b2a; /* Cor de fundo do menu mobile */
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: right 0.4s ease-in-out;
-        z-index: 1000;
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #081525;
+        padding: 25px 0;
+        border-top: 1px solid #e0a96d;
+        z-index: 10001;
     }
 
-    /* Quando a classe .active for adicionada via JS, o menu aparece deslizando */
     .main-nav.active {
-        right: 0;
+        display: block;
     }
 
-    /* Organiza os links do menu na vertical no telemóvel */
     .main-nav ul {
         flex-direction: column;
         gap: 25px;
-        text-align: center;
     }
 
     .main-nav a {
-        font-size: 1.2rem;
-    }
-
-    /* Animação do botão hambúrguer transformando-se num "X" quando aberto */
-    .menu-toggle.active span:nth-child(1) {
-        transform: translateY(9.5px) rotate(45deg);
-    }
-
-    .menu-toggle.active span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .menu-toggle.active span:nth-child(3) {
-        transform: translateY(-9.5px) rotate(-45deg);
+        font-size: 0.85rem !important;
     }
 }
+/* Ajuste do logo somente em celulares */
+@media screen and (max-width: 768px) {
+    .logo img {
+        height: 65px;
+        max-height: 65px;
+        transform: scale(1.2);
+    }
+}
+
+
+
+

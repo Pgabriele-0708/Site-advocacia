@@ -8,25 +8,42 @@
 </head>
 <body>
 
-    <!-- Cabeçalho Fixo e Transparente -->
-    <header class="site-header">
-        <div class="header-container">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="/img/vinicius-sf.png" alt="Dr. Vinícius Cordeiro">
-                </a>
-            </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">INÍCIO</a></li>
-                    <li><a href="sobre.html">SOBRE</a></li>
-                    <li><a href="duvidas.html">DÚVIDAS</a></li>
-                    <li><a href="artigos.html">ARTIGOS</a></li>
-                    <li><a href="contato.html" class="active">CONTATO</a></li>
-                </ul>
-            </nav>
+ <!-- Cabeçalho Fixo e Transparente -->
+<header class="site-header">
+    <div class="header-container">
+
+        <!-- LOGO -->
+        <div class="logo">
+            <a href="index.html">
+                <img src="/img/logo-bronze.png"
+                     alt="Dr. Vinícius Cordeiro">
+            </a>
         </div>
-    </header>
+
+        <!-- BOTÃO HAMBÚRGUER -->
+        <button class="menu-toggle"
+                id="menuToggle"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="mainNav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- MENU -->
+        <nav class="main-nav" id="mainNav">
+            <ul>
+                <li><a href="index.html">INÍCIO</a></li>
+                <li><a href="sobre.html" class="active">SOBRE</a></li>
+                <li><a href="duvidas.html">DÚVIDAS</a></li>
+                <li><a href="artigos.html">ARTIGOS</a></li>
+                <li><a href="contato.html">CONTATO</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
 
     <section class="hero-contato">
     <div class="hero-artigos-content">

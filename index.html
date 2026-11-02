@@ -8,23 +8,30 @@
 </head>
 <body>
 
-   <!-- Cabeçalho Único e Otimizado -->
+ <!-- CABEÇALHO -->
 <header class="site-header">
     <div class="header-container">
+
+        <!-- LOGO -->
         <div class="logo">
             <a href="index.html">
-                <img src="img/vinicius-sf.png" alt="Dr. Vinícius Cordeiro">
+                <img src="/img/logo-bronze.png"
+                     alt="Dr. Vinícius Cordeiro">
             </a>
         </div>
 
-        <!-- Botão do Menu Hambúrguer (Essencial para o telemóvel) -->
-        <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menu">
+        <!-- BOTÃO HAMBÚRGUER -->
+        <button class="menu-toggle"
+                id="menuToggle"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="mainNav">
             <span></span>
             <span></span>
             <span></span>
         </button>
 
-        <!-- Menu de Navegação com ID para o JS -->
+        <!-- MENU DE NAVEGAÇÃO -->
         <nav class="main-nav" id="mainNav">
             <ul>
                 <li><a href="index.html" class="active">INÍCIO</a></li>
@@ -34,61 +41,62 @@
                 <li><a href="contato.html">CONTATO</a></li>
             </ul>
         </nav>
+
     </div>
 </header>
-    <header class="site-header">
-        <div class="header-container">
-            <div class="logo">
-                <a href="index.html">
-                    <!-- Se o seu logo for escuro/preto e precisar aparecer no fundo claro das outras páginas, 
-                         aqui podemos usar uma versão branca se desejar, ou manter o atual -->
-                    <img src="/img/vinicius-sf.png" alt="Dr. Vinícius Cordeiro">
-                </a>
-            </div>
-           <nav class="main-nav">
-    <ul>
-       <li><a href="index.html" class="active">INÍCIO</a></li>
-<li><a href="sobre.html">SOBRE</a></li>
-<li><a href="duvidas.html">DÚVIDAS</a></li>
-<li><a href="artigos.html">ARTIGOS</a></li>
-<li><a href="contato.html">CONTATO</a></li>
-
-        
-    </ul>
-</nav>
-        </div>
-    </header>
-
+ 
 <!-- Seção Principal de Impacto com Imagem Normal -->
-    <section class="hero-institucional">
-        <div class="hero-inner">
-            <div class="hero-content-left">
-                <span class="subtitulo-topo">ADVOCACIA CRIMINAL</span>
-                
-                <h1 class="titulo-principal-hero">
-                    Atuação criminal pautada pela excelência, ética e compromisso. Oferecemos uma advocacia estratégica, humanizada e dedicada à salvaguarda dos direitos e garantias fundamentais de cada cliente.
-                </h1>
-                
-                <p class="texto-descricao">
-                    Especialistas em Direito Penal e Processo Penal, com atuação ampla em inquéritos policiais, flagrantes, procedimentos investigatórios, ações penais, audiências, recursos e execução penal. Prestamos assessoria integral em flagrantes, pedidos de liberdade provisória, habeas corpus, revogação de prisões preventivas e demais medidas voltadas à tutela da liberdade individual.
+
+<section class="hero-institucional">
+    <div class="hero-inner">
+
+        <div class="hero-content-left">
+
+            <span class="subtitulo-topo">ADVOCACIA CRIMINAL</span>
+
+            <h1 class="titulo-principal-hero">
+                Atuação criminal pautada pela excelência, ética e compromisso.
+                Oferecemos uma advocacia estratégica, humanizada e dedicada
+                à salvaguarda dos direitos e garantias fundamentais de cada cliente.
+            </h1>
+
+            <!-- BOTÃO DE ESPECIALIDADES -->
+            <button class="btn-especialidades"
+                    id="btnEspecialidades"
+                    aria-expanded="false"
+                    aria-controls="textoEspecialidades">
+                Conheça nossas especialidades
+                <span class="seta-especialidades">＋</span>
+            </button>
+
+            <!-- TEXTO QUE APARECE AO CLICAR -->
+            <div class="especialidades-conteudo"
+                 id="textoEspecialidades"
+                 hidden>
+
+                <p>
+                    Especialistas em Direito Penal e Processo Penal, com atuação ampla
+                    em inquéritos policiais, flagrantes, procedimentos investigatórios,
+                    ações penais, audiências, recursos e execução penal. Prestamos
+                    assessoria integral em flagrantes, pedidos de liberdade provisória,
+                    habeas corpus, revogação de prisões preventivas e demais medidas
+                    voltadas à tutela da liberdade individual.
                 </p>
-                
-                <p class="texto-descricao">
-                    Também dispomos de consultoria jurídica especializada em legislação e regularização de armas de fogo, orientando em todas as etapas de aquisição, registro, posse, porte e renovação de autorizações perante os órgãos competentes.
+
+                <p>
+                    Também dispomos de consultoria jurídica especializada em legislação
+                    e regularização de armas de fogo, orientando em todas as etapas de
+                    aquisição, registro, posse, porte e renovação de autorizações perante
+                    os órgãos competentes.
                 </p>
-                
-                <div class="hero-acoes">
-                    <a href="https://wa.me/5521984936867" target="_blank" class="btn-institucional-primary">
-                        Plantão 24h / WhatsApp
-                    </a>
-                </div>
+
             </div>
-            
-            <div class="hero-content-right">
-                <!-- Mantido limpo para dar espaço à estátua de fundo -->
-            </div>
+
         </div>
-    </section>
+
+    </div>
+</section>
+
     <!-- Rodapé Institucional -->
     <footer class="site-footer">
         <div class="footer-container">

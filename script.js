@@ -115,23 +115,42 @@ function enviarMensagemContato(event) {
         }, 6000);
     }
 }
-// Funcionalidade do Menu Hambúrguer Responsivo
-document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.getElementById('menuToggle');
-    const mainNav = document.getElementById('mainNav');
+const btnEspecialidades = document.getElementById("btnEspecialidades");
+const textoEspecialidades = document.getElementById("textoEspecialidades");
 
-    if (menuToggle && mainNav) {
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            mainNav.classList.toggle('active');
-        });
+if (btnEspecialidades && textoEspecialidades) {
+    btnEspecialidades.addEventListener("click", function () {
 
-        // Fecha o menu automaticamente ao clicar em qualquer link (opcional, melhora a experiência)
-        mainNav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                menuToggle.classList.remove('active');
-                mainNav.classList.remove('active');
-            });
+        const aberto = this.getAttribute("aria-expanded") === "true";
+
+        this.setAttribute("aria-expanded", !aberto);
+        textoEspecialidades.hidden = aberto;
+
+        this.querySelector(".seta-especialidades").textContent =
+            aberto ? "＋" : "−";
+    });
+}
+const menuToggle = document.getElementById("menuToggle");
+const mainNav = document.getElementById("mainNav");
+
+if (menuToggle && mainNav) {
+
+    menuToggle.addEventListener("click", () => {
+        const aberto = mainNav.classList.toggle("active");
+
+        menuToggle.classList.toggle("active", aberto);
+        menuToggle.setAttribute("aria-expanded", aberto);
+        menuToggle.setAttribute(
+            "aria-label",
+            aberto ? "Fechar menu" : "Abrir menu"
+        );
+    });
+
+    mainNav.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+            mainNav.classList.remove("active");
+            menuToggle.classList.remove("active");
+            menuToggle.setAttribute("aria-expanded", "false");
         });
-    }
-});
+    });
+}
